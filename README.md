@@ -25,3 +25,13 @@ We use a very simplistic approach to PDF generation. So far, there was no need t
 It is therefore required to have the `wkhtmltopdf` binaries included in your `PATH` environment variable.
 
 **Usage is then very simple:** Simply pick the wanted year and a format/template that is to be generated and hit `Generate`.
+
+## Template previews
+
+<p align="center">
+  <img src="https://0x0.st/o6JW.png" />
+</p>
+
+## Todos
+- Add more default templates
+- Use batch mode PDF generation to significantly speed up the process
