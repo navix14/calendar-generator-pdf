@@ -1,0 +1,645 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape test</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans';
+            font-style: italic;
+        }
+
+        body {
+            display: -webkit-box;
+            width: 100vw;
+            height: 249mm;
+        }
+
+        .page {
+            width: 50%;
+            height: 100%;
+        }
+
+        .page-1 {
+            padding-right: 7em;
+        }
+
+        .page-2 {
+            padding-left: 7em;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+        }
+
+        .separator {
+            height: 100%;
+            width: 1px;
+            background: black;
+        }
+
+        .horizontal-line {
+            height: 1px;
+            margin-bottom: 0.4em;
+            width: 100%;
+            background: black;
+        }
+
+        header h1.month-year {
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        header .container {
+            display: -webkit-box;
+            -webkit-box-pack: justify;
+            -webkit-box-align: center;
+            font-size: 0.8em;
+        }
+
+        header .grey-box {
+            display: -webkit-box;
+            -webkit-box-pack: end;
+            height: 1.5em;
+            margin-top: 0.4em;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .grey-box .symbols {
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+        }
+
+        .symbol {
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            height: 100%;
+        }
+
+        svg {
+            display: block;
+            height: 70%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr, td {
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-left: 0;
+            border-right: 0;
+        }
+
+        tr {
+            height: 27px;
+        }
+
+            tr:first-child > td, tr:first-child {
+                border-top: none;
+            }
+
+        td:nth-child(3), td:nth-child(2), td:nth-child(1) {
+            border-right: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        .end-tr {
+            border-top: 2px solid rgba(0, 0, 0, 0.5);
+            height: 45px;
+        }
+
+        .td-day {
+            display: -webkit-box;
+            -webkit-box-pack: justify;
+            -webkit-box-align: center;
+        }
+
+            .td-day .left {
+                display: -webkit-box;
+                -webkit-box-align: center;
+            }
+
+            .td-day .right {
+                margin-right: 1em;
+                margin-bottom: -0.8em;
+            }
+
+        .right h3 {
+            font-weight: 400;
+        }
+
+        .left h2 {
+            font-size: 2em;
+            font-weight: 500;
+            padding-right: 0.3em;
+        }
+
+        .left span {
+            display: block;
+            margin-bottom: -0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="page page-1">
+        <div class="content">
+            <div class="horizontal-line"></div>
+            <header>
+                <h1 class="month-year">{{MONTH_LEFT}}</h1>
+                <div class="container">
+                    <p style="font-size: 1.3em;">{{KALENDERWOCHE_LEFT}}. Woche</p>
+                    <p style="font-size: 1.3em;">{{FROM_DATE_LEFT}}.-{{TO_DATE_LEFT}}.</p>
+                </div>
+                <div class="grey-box">
+                    <div class="symbols">
+                        <div class="symbol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="30" viewBox="0 0 34 30">
+                                <g id="Polygon_1" data-name="Polygon 1" fill="none">
+                                    <path d="M17,0,34,30H0Z" stroke="none" />
+                                    <path d="M 17 4.05668830871582 L 3.432123184204102 28 L 30.5678768157959 28 L 17 4.05668830871582 M 17 0 L 34 30 L 0 30 L 17 0 Z" stroke="none" fill="#fff" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="symbol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="46" viewBox="0 0 22 46">
+                                <text id="_" data-name="√" transform="translate(0 36)" fill="#fff" font-size="34" font-family="Open Sans" font-style="italic"><tspan x="0" y="0">√</tspan></text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <table>
+                <colgroup>
+                    <col style="width:50%">
+                    <col style="width:40%">
+                    <col style="width:4%">
+                    <col style="width:4%">
+                </colgroup>
+
+                <tbody>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2>{{DATE_1_LEFT}}</h2>
+                                    <span>{{DATE_1_WEEKDAY_LEFT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_1_LEFT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2>{{DATE_2_LEFT}}</h2>
+                                    <span>{{DATE_2_WEEKDAY_LEFT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_2_LEFT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2>{{DATE_3_LEFT}}</h2>
+                                    <span>{{DATE_3_WEEKDAY_LEFT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_3_LEFT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2>{{DATE_4_LEFT}}</h2>
+                                    <span>{{DATE_4_WEEKDAY_LEFT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_4_LEFT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="page page-2">
+        <div class="content">
+            <div class="horizontal-line"></div>
+            <header>
+                <h1 class="month-year">{{MONTH_RIGHT}}</h1>
+                <div class="container">
+                    <p style="font-size: 1.3em;">{{KALENDERWOCHE_RIGHT}}. Woche</p>
+                    <p style="font-size: 1.3em;">{{FROM_DATE_RIGHT}}.-{{TO_DATE_RIGHT}}.</p>
+                </div>
+                <div class="grey-box">
+                    <div class="symbols">
+                        <div class="symbol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="30" viewBox="0 0 34 30">
+                                <g id="Polygon_1" data-name="Polygon 1" fill="none">
+                                    <path d="M17,0,34,30H0Z" stroke="none" />
+                                    <path d="M 17 4.05668830871582 L 3.432123184204102 28 L 30.5678768157959 28 L 17 4.05668830871582 M 17 0 L 34 30 L 0 30 L 17 0 Z" stroke="none" fill="#fff" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="symbol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="46" viewBox="0 0 22 46">
+                                <text id="_" data-name="√" transform="translate(0 36)" fill="#fff" font-size="34" font-family="Open Sans" font-style="italic"><tspan x="0" y="0">√</tspan></text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <table>
+                <colgroup>
+                    <col style="width:50%">
+                    <col style="width:40%">
+                    <col style="width:4%">
+                    <col style="width:4%">
+                </colgroup>
+
+                <tbody>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2>{{DATE_1_RIGHT}}</h2>
+                                    <span>{{DATE_1_WEEKDAY_RIGHT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_1_RIGHT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2>{{DATE_2_RIGHT}}</h2>
+                                    <span>{{DATE_2_WEEKDAY_RIGHT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_2_RIGHT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="end-tr">
+                        <td>
+                            <div class="td-day">
+                                <div class="left">
+                                    <h2 style="color: rgba(0, 0, 0, 0.5);">{{DATE_3_RIGHT}}</h2>
+                                    <span>{{DATE_3_WEEKDAY_RIGHT}}</span>
+                                </div>
+                                <div class="right">
+                                    <h3>{{DATE_3_RIGHT}}</h3>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="end-tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
