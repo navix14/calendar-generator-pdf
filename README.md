@@ -2,7 +2,7 @@
 
 This tool was created to easily _generate_ and print refills for your calendar/planner yourself. It comes with two premade templates, one for a _single page_ A4 layout, and a _double sided_ A5 layout.
 
-It outputs a single merged PDF file containing all pages in the correct printing order.
+It outputs a single merged PDF file `result.pdf` containing all pages in the correct printing order.
 
 <p align="center">
   <img src="https://0x0.st/o64h.png" />
